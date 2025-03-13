@@ -21,12 +21,11 @@
         {{ form.hidden_tag() }}
 
         <div class="mb-3">
-            <label class="form-label fw-bold">{{ form.name.label.text | replace('(Required)', '') }} 
+            <label class="form-label fw-bold">
+                {{ form.name.label.text | replace('(Required)', '') }} 
                 <span class="text-danger fw-bold">(Required)</span>
             </label>
-
-            <small class="form-text text-muted">Please enter your full name.
-                
+            <small class="form-text text-muted">Please enter your full name.</small>
             {{ form.name(class="form-control", placeholder="Enter your name") }}
             {% if form.name.errors %}
                 <div class="text-danger">
@@ -38,12 +37,11 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label fw-bold">{{ form.email.label.text | replace('(Required)', '') }} 
+            <label class="form-label fw-bold">
+                {{ form.email.label.text | replace('(Required)', '') }} 
                 <span class="text-danger fw-bold">(Required)</span>
             </label>
-
-            <small class="form-text text-muted">Please enter your e-mail address.
-                
+            <small class="form-text text-muted">Please enter your email address.</small>
             {{ form.email(class="form-control", placeholder="Enter your email") }}
             {% if form.email.errors %}
                 <div class="text-danger">
@@ -55,12 +53,11 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label fw-bold">{{ form.subject.label.text | replace('(Required)', '') }} 
+            <label class="form-label fw-bold">
+                {{ form.subject.label.text | replace('(Required)', '') }} 
                 <span class="text-danger fw-bold">(Required)</span>
             </label>
-
-            <small class="form-text text-muted">Please enter the subject for your message.
-                
+            <small class="form-text text-muted">Please enter the subject of your message.</small>
             {{ form.subject(class="form-control", placeholder="Enter subject") }}
             {% if form.subject.errors %}
                 <div class="text-danger">
@@ -72,12 +69,11 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label fw-bold">{{ form.message.label.text | replace('(Required)', '') }} 
+            <label class="form-label fw-bold">
+                {{ form.message.label.text | replace('(Required)', '') }} 
                 <span class="text-danger fw-bold">(Required)</span>
             </label>
-
-            <small class="form-text text-muted">Please enter the message you would like to send.
-                
+            <small class="form-text text-muted">Please enter the message you would like to send.</small>
             {{ form.message(class="form-control", rows=4, placeholder="Enter your message") }}
             {% if form.message.errors %}
                 <div class="text-danger">
