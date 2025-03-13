@@ -21,7 +21,9 @@
         {{ form.hidden_tag() }}
 
         <div class="mb-3">
-            {{ form.name.label(class="form-label") }}
+            <label class="form-label">{{ form.name.label.text | replace('(Required)', '') }} 
+                <span class="text-danger">(Required)</span>
+            </label>
             {{ form.name(class="form-control", placeholder="Enter your name") }}
             {% if form.name.errors %}
                 <div class="text-danger">
@@ -33,7 +35,9 @@
         </div>
 
         <div class="mb-3">
-            {{ form.email.label(class="form-label") }}
+            <label class="form-label">{{ form.email.label.text | replace('(Required)', '') }} 
+                <span class="text-danger">(Required)</span>
+            </label>
             {{ form.email(class="form-control", placeholder="Enter your email") }}
             {% if form.email.errors %}
                 <div class="text-danger">
@@ -45,7 +49,9 @@
         </div>
 
         <div class="mb-3">
-            {{ form.subject.label(class="form-label") }}
+            <label class="form-label">{{ form.subject.label.text | replace('(Required)', '') }} 
+                <span class="text-danger">(Required)</span>
+            </label>
             {{ form.subject(class="form-control", placeholder="Enter subject") }}
             {% if form.subject.errors %}
                 <div class="text-danger">
@@ -57,7 +63,9 @@
         </div>
 
         <div class="mb-3">
-            {{ form.message.label(class="form-label") }}
+            <label class="form-label">{{ form.message.label.text | replace('(Required)', '') }} 
+                <span class="text-danger">(Required)</span>
+            </label>
             {{ form.message(class="form-control", rows=4, placeholder="Enter your message") }}
             {% if form.message.errors %}
                 <div class="text-danger">
