@@ -15,7 +15,37 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Zara Campbell")
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    """Render and process the contact form."""
+    form = ContactForm()
+
+    if request.method == 'POST' and form.validate_on_submit():
+        # Retrieve form data
+        name = form.name.data
+        email = form.email.data
+        subject = form.subject.data
+        message = form.message.data
+
+        # Create email message
+        msg = Message(subject, 
+                      sender=(name, email), 
+                      recipients=["your_email@example.com"])  # Change to actual recipient
+        msg.body = message
+
+        # Send email
+        try:
+            mail.send(msg)
+            flash("Your message has been sent successfully!", "success")
+            return redirect(url_for('home'))
+        except Exception as e:
+            flash("An error occurred while sending your message. Please try again.", "danger")
+
+    flash_errors(form)  # Flash form errors if validation fails
+    return render_template('contact.html', form=form)
+
 
 
 ###
